@@ -4,8 +4,8 @@
 set -e
 
 CHROME_VERSIONS_URL=https://googlechromelabs.github.io/chrome-for-testing/last-known-good-versions-with-downloads.json
-CHROME_VERSIONS=$(curl -s $CHROME_VERSIONS_URL)
-LATEST_CHROME_VERSION=$(jq '.channels.Stable.version' <<< $CHROME_VERSIONS | tr -d '"')
+CHROME_VERSIONS=$(curl -s "$CHROME_VERSIONS_URL")
+LATEST_CHROME_VERSION=$(jq '.channels.Stable.version' <<< "$CHROME_VERSIONS" | tr -d '"')
 
 DIR="$HOME/.local/share/chrome_for_testing"
 
@@ -110,7 +110,7 @@ if [ "$INSTALL_CHROMEDRIVER" = true ]; then
 
     if [ "$CREATE_SYMLINK" = true ]; then
         echo "Creating symlink..."
-        ln -sf "$CHROME_BIN" "$HOME/.local/bin/chromedriver"
+        ln -sf "$CHROMEDRIVER_BIN" "$HOME/.local/bin/chromedriver"
     fi
 
     echo "✅ Chromedrvier sucesfully instsalled"
