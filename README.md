@@ -9,13 +9,14 @@ install_chrome.sh
 ```
 
 There's two env vars you can use
-- `CREATE_SYMLINK` Tells the script to create a symlink for both chrome and chromedriver
-- `PLATFORM` What plaform to setup (Supports Mac-arm64, Mac-x86, Linux64)
-_Mac-arm64 is used by defualt_
+- `CREATE_SYMLINK`: Tells the script to create a symlink for both chrome and chromedriver
+- `PLATFORM`: What plaform to setup (Supports Mac-arm64, Mac-x86, Linux64)
+- `FORCE_REINSTALL`: Deletes current files and reinstalls both chrome and chromedriver 
+_Mac-arm64 is used by default_
 
 Full example:
 ```shell
-CREATE_SYMLINK=true PLATFORM="Linux86" ./install_chrome.sh
+CREATE_SYMLINK=true PLATFORM="Linux86" FORCE_REINSTALL=true ./install_chrome.sh
 ```
 
 

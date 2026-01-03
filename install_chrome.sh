@@ -16,6 +16,10 @@ elif [ $PLATFORM != "mac-arm64" ] && [ $PLATFORM != "mac-x64" ] && [ $PLATFORM !
     exit 1
 fi
 
+if [ "$FORCE_REINSTALL" = true ]; then
+    rm -rf "$DIR"
+fi
+
 echo "-------------------- CHROME --------------------"
 # Get latest Chrome version
 CHROME_DIR="$DIR/chrome"
